@@ -254,43 +254,43 @@ class BaseHandler(object):
 class PrintHandler(BaseHandler):
 
     def header(self, format, num_tracks, division):
-        print("Thd %d %d %d" % (format, num_tracks, division))
+        print(("Thd %d %d %d" % (format, num_tracks, division)))
 
     def text_event(self, text):
-        print("text event '%s'" % text)
+        print(("text event '%s'" % text))
 
     def track_name(self, name):
-        print("sequence/track name '%s'" % name)
+        print(("sequence/track name '%s'" % name))
 
     def instrument(self, name):
-        print("instrument '%s'" % name)
+        print(("instrument '%s'" % name))
 
     def track_start(self, track_num):
-        print("track start %d" % track_num)
+        print(("track start %d" % track_num))
 
     def track_end(self):
         print("track end")
 
     def tempo(self, t1, t2, t3):
-        print("tempo %d %d %d" % (t1, t2, t3))
+        print(("tempo %d %d %d" % (t1, t2, t3)))
 
     def smpte(self, s1, s2, s3, s4, s5):
-        print("smpte %d %d %d %d %d" % (s1, s2, s3, s4, s5))
+        print(("smpte %d %d %d %d %d" % (s1, s2, s3, s4, s5)))
 
     def time_signature(self, t1, t2, t3, t4):
-        print("time signature %d %d %d %d" % (t1, t2, t3, t4))
+        print(("time signature %d %d %d %d" % (t1, t2, t3, t4)))
 
     def key_signature(self, k1, k2):
-        print("key signature %d %d" % (k1, k2))  # @@@ first arg signed?
+        print(("key signature %d %d" % (k1, k2)))  # @@@ first arg signed?
 
     def controller(self, time_delta, channel, controller, value):
-        print("controller %d %d %d %d" % (time_delta, channel, controller, value))
+        print(("controller %d %d %d %d" % (time_delta, channel, controller, value)))
 
     def program_change(self, time_delta, channel, program):
-        print("program change %d %d %d" % (time_delta, channel, program))
+        print(("program change %d %d %d" % (time_delta, channel, program)))
 
     def note(self, offset, channel, midi_pitch, duration):
-        print("note %d %d %d %d" % (offset, channel, midi_pitch, duration))
+        print(("note %d %d %d %d" % (offset, channel, midi_pitch, duration)))
 
 
 class SebastianHandler(BaseHandler):

@@ -224,7 +224,7 @@ def dynamics(start, end=None):
             start_velocity = _dynamic_markers_to_velocity[start]
             start_marker = start
         else:
-            raise ValueError("Unknown start dynamic: %s, must be in %s" % (start, _dynamic_markers_to_velocity.keys()))
+            raise ValueError("Unknown start dynamic: %s, must be in %s" % (start, list(_dynamic_markers_to_velocity.keys())))
 
         if end is None:
             end_velocity = start_velocity
@@ -233,7 +233,7 @@ def dynamics(start, end=None):
             end_velocity = _dynamic_markers_to_velocity[end]
             end_marker = end
         else:
-            raise ValueError("Unknown end dynamic: %s, must be in %s" % (start, _dynamic_markers_to_velocity.keys()))
+            raise ValueError("Unknown end dynamic: %s, must be in %s" % (start, list(_dynamic_markers_to_velocity.keys())))
 
         retval = sequence.__class__([Point(point) for point in sequence._elements])
 

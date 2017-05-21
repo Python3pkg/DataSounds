@@ -19,7 +19,7 @@ class Point(dict):
 
     def unify(self, other):
         new = self.copy()
-        for key, value in other.items():
+        for key, value in list(other.items()):
             if key in new:
                 if new[key] != value:
                     raise UnificationError(key)
@@ -129,13 +129,13 @@ class SeqBase(object):
 
     def _repr_png_(self):
         f = self.display("png")
-        if not isinstance(f, basestring):
+        if not isinstance(f, str):
             return f.data
         return f
 
     def _repr_svg_(self):
         f = self.display("svg")
-        if not isinstance(f, basestring):
+        if not isinstance(f, str):
             return f.data
         return f
 
